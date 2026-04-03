@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мод-пак - Вечная зима</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+            padding: 20px;
+            position: relative;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            overflow-x: hidden;
+        }
+
+        .snow-emoji {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .snow-emoji span {
+            position: absolute;
+            font-size: 2rem;
+            opacity: 0.3;
+            animation: fall linear infinite;
+            user-select: none;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(-10vh) rotate(0deg);
+                opacity: 0.3;
+            }
+            100% {
+                transform: translateY(110vh) rotate(360deg);
+                opacity: 0.1;
+            }
+        }
+
+        .container {
+            text-align: center;
+            padding: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        h1 {
+            color: white;
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+
+        .badge {
+            background: #ff5722;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .screenshots {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .screenshot {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        .screenshot img {
+            width: 100%;
+            max-height: 350px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .description {
+            background: rgba(0,0,0,0.5);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+            text-align: left;
+        }
+
+        .description h3 {
+            color: #ffaa00;
+            margin-bottom: 15px;
+        }
+
+        .description ul {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+        }
+
+        .description li {
+            color: #ddd;
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+            text-align: left;
+        }
+
+        .description li::before {
+            content: "✅";
+            position: absolute;
+            left: 0;
+        }
+
+        .sound-badge {
+            background: rgba(0,0,0,0.6);
+            border-left: 4px solid #00ffaa;
+            padding: 10px 15px;
+            margin-top: 15px;
+            border-radius: 10px;
+            color: #aaffdd;
+        }
+
+        .download-btn {
+            display: inline-block;
+            background: #4CAF50;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            padding: 18px 45px;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: 0.3s;
+            cursor: pointer;
+            border: none;
+        }
+
+        .download-btn:hover {
+            background: #45a049;
+            transform: scale(1.05);
+        }
+
+        .version {
+            color: #888;
+            margin-top: 20px;
+            font-size: 12px;
+        }
+
+        .author {
+            color: #aaa;
+            margin-top: 15px;
+            font-size: 12px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            padding-top: 15px;
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 28px; }
+            .download-btn { font-size: 18px; padding: 12px 30px; }
+            .snow-emoji span { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="snow-emoji" id="snowEmoji"></div>
+
+    <div class="container">
+        <div class="badge">⚒️ НОВИНКА ⚒️</div>
+        <h1>⚒️ Мод-пак "Вечная зима" ⚒️</h1>
+
+        <div class="screenshots">
+            <div class="screenshot">
+                <img src="foto.3.png" alt="Скриншот 1">
+            </div>
+            <div class="screenshot">
+                <img src="foto.1.png" alt="Скриншот 2">
+            </div>
+            <div class="screenshot">
+                <img src="foto.2.png" alt="Скриншот 3">
+            </div>
+        </div>
+
+        <div class="description">
+            <h3>💖 Что внутри мод-пака:</h3>
+            <ul>
+                <li><strong>🌀 Торнадо</strong> — разрушительные смерчи в мире</li>
+                <li><strong>🛡️ Броня</strong> — новая защитная экипировка</li>
+                <li><strong>⚔️ Оружие</strong> — новое холодное и дальнобойное оружие</li>
+                <li><strong>🪑 Декор</strong> — красивая мебель и украшения для дома</li>
+                <li><strong>🌡️ Климат</strong> — новая система погоды и температур</li>
+                <li><strong>🏛️ Структуры</strong> — уникальные постройки и руины</li>
+                <li><strong>👹 Мобы</strong> — новые существа и враги</li>
+                <li><strong>❄️ Вечная зима</strong> — мир покрыт снегом и льдом</li>
+            </ul>
+
+            <div class="sound-badge">
+                🔊 <strong>Звуки природы в пещерах и эхо</strong> — каждый шаг, капля воды и дальние звуки создают реалистичное эхо в подземельях!
+            </div>
+        </div>
+
+        <a href="modpak.zip" download class="download-btn">
+            ⬇️ Скачать мод-пак
+        </a>
+
+        <div class="version">
+            Версия: 1.29.1-1.1.7-hotfix.2 | Размер: ~200 МБ | Minecraft 1.19+ | Windows 10
+        </div>
+
+        <div class="author">
+            👤 Создатель: AntiChem<br>
+            💬 "Погрузись в мир вечной зимы!"
+        </div>
+    </div>
+
+    <script>
+        const emojis = ['❄️', '☃️', '⛄', '🌨️', '🧊', '🏔️', '⛷️', '🎿', '🧣', '🧤'];
+        
+        function createSnowEmoji() {
+            const snowDiv = document.getElementById('snowEmoji');
+            const emoji = document.createElement('span');
+            emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+            const size = 1 + Math.random() * 2;
+            emoji.style.fontSize = size + 'rem';
+            emoji.style.left = Math.random() * 100 + '%';
+            const duration = 8 + Math.random() * 12;
+            emoji.style.animationDuration = duration + 's';
+            emoji.style.animationDelay = Math.random() * 5 + 's';
+            snowDiv.appendChild(emoji);
+            setTimeout(() => {
+                emoji.remove();
+            }, duration * 1000);
+        }
+        
+        setInterval(createSnowEmoji, 500);
+        for (let i = 0; i < 15; i++) {
+            setTimeout(createSnowEmoji, i * 100);
+        }
+    </script>
+</body>
+</html>
